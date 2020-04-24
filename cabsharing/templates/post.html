@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="body-class">
+    <div class="text-center">
+        <h1>Post your cab timings</h1>
+        <h2>Share the information below</h2>
+        <form action="{% url 'cabs:post' %}" method="post" enctype="multipart/form-data" class="form-signin">
+            {% csrf_token %}
+            {{ form }}
+            <p>Please enter date in the format (yyyy-mm-dd)</p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Book</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
