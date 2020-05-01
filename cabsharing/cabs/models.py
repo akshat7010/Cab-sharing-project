@@ -32,3 +32,19 @@ class Frequest(models.Model):
     to=models.CharField(max_length=100)
     accepted=models.BooleanField(default=False)
     booking_id=models.IntegerField(default=0)
+
+
+class Fgroup2(models.Model):
+    created_by1 = models.CharField(max_length=100,default=None)
+    passengers1 = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)])
+    time1 = models.TimeField()
+    gender1 = models.CharField(max_length=1, choices=Gchoice, default='M')
+    pickup_from1 = models.CharField(max_length=100)
+    created_by2 = models.CharField(max_length=100,default=None)
+    passengers2 = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)])
+    time2 = models.TimeField()
+    gender2 = models.CharField(max_length=1, choices=Gchoice, default='M')
+    pickup_from2 = models.CharField(max_length=100)
+    date = models.DateField()
+    destination = models.CharField(max_length=100)
+    total_passengers = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(4)],default=None)

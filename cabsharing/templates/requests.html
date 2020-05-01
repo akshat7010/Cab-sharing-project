@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="bg-light">
+<div class="container py-5">
+<div class="header">
+    <h3 class="text-muted prj-name">
+        <span class="fa fa-users fa-2x principal-title"></span>
+        {{title}}
+    </h3>
+  </div>
+</br>
+{% if not request_list %}
+<h3>Sorry, no one has requested you yet.You can go to the notification page and request people with similar timings.</h3>
+{% else %}
+    <div class="jumbotron list-content">
+    <ul class="list-group">
+      <li class="list-group-item title" href="#">
+        Your requests:
+      </li>
+{% for obj in request_list %}
+<li class="list-group-item text-left" href="#">
+          <img class="img-thumbnail"  src="https://cdn2.vectorstock.com/i/thumb-large/48/31/emo-avatar-vector-4304831.jpg">
+        <label class="name">
+          {{ obj.by}}
+        </label><br>
+          Requested to share cab with Booking ID : {{ obj.booking_id}}
+        <label class="pull-right">
+            <a  class="btn btn-success btn-xs glyphicon glyphicon-ok" href="/cabs/Fgroup2/{{obj.booking_id}}/{{ obj.by}}/{{obj.to}}/{{obj.id}}" title="Accept"></a>
+            <a  class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="{{obj.id}}/Rcancel" title="Delete"></a>
+            <a  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Send message"></a>
+        </label>
+        <div class="break"></div>
+
+{% endfor %}
+{% endif %}
+            </ul>
+  </div>
+</div>
+</div>
+{% endblock %}

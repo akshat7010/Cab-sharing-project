@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="bg-light py-5">
+    <div class="container py-5">
+        <h2>{{ title }} :</h2>
+        <br>
+        {% if not groups_list %}
+        <h3>Sorry, no results found.</h3>
+        {% else %}
+        {% for obj in groups_list %}
+        <div class="card">
+          <h5 class="card-header">{{ obj.date}}  &nbsp; &nbsp;&nbsp;
+              {% if obj.time1 < obj.time2 %}
+              {{ obj.time1}}-{{obj.time2}}
+              {% else %}
+              {{ obj.time2}}-{{obj.time1}}
+              {% endif %}
+          </h5>
+          <div class="card-body">
+            <p class="card-text">First Passenger: {{ obj.created_by1}}</p>
+              <p class="card-text">Gender: {{ obj.gender1}}</p>
+              <p class="card-text">Pickup from: {{ obj.pickup_from1}}</p><br>
+              <p class="card-text">Second passenger: {{ obj.created_by2}}</p>
+              <p class="card-text">Gender: {{ obj.gender2}}</p>
+              <p class="card-text">Pickup from: {{ obj.pickup_from2}}</p><br>
+              <p class="card-text">Destination: {{ obj.destination}}</p>
+             <p class="card-text">Booking ID: {{ obj.id}}</p>
+              {% if obj.passengers1 != 1 %}
+              <p class="card-text">{{ obj.created_by1}} is bringing more passengers.</p>
+              {% endif %}
+              {% if obj.passengers2 != 1 %}
+              <p class="card-text">{{ obj.created_by2}} is bringing more passengers.</p>
+              {% endif %}
+              <p class="card-text">Total passengers : {{ obj.total_passengers}}</p>
+            <a class="btn btn-primary" href="{{obj.id}}/Gcancel" onclick="myFunction();">Cancel your booking</a>
+              <script>
+                                function myFunction() {
+                                  alert("Your booking has been cancelled.");
+                                }
+              </script>
+          </div>
+        </div>
+        <br>
+{% endfor %}
+{% endif %}
+    </div>
+</div>
+{% endblock %}
