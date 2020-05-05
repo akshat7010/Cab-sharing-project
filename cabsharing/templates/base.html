@@ -38,8 +38,12 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{% url 'cabs:bookings' %}">My bookings</a>
-          <a class="dropdown-item" href="{% url 'cabs:notifications' %}">Notifications</a>
-            <a class="dropdown-item" href="{% url 'cabs:requestpage' %}">Requests</a>
+          <a class="dropdown-item" href="{% url 'cabs:notifications' %}">Notifications
+            <strong class="fa-stack-xs" style="color:red">&nbsp; {{nnum}}</strong>
+          </a>
+            <a class="dropdown-item" href="{% url 'cabs:requestpage' %}">Requests
+            <strong class="fa-stack-xs" style="color:red">&nbsp;{{num}}</strong>
+            </a>
             <a class="dropdown-item" href="{% url 'cabs:groups' %}">My Groups</a>
           <div class="dropdown-divider"></div>
           <form class="form-inline my-2 my-lg-0" action="/cabs/logout/" method="post" >

@@ -5,13 +5,64 @@
     <div class="container py-5">
 <h2>{{ title }} :</h2>
 <br>
-{% if  not passenger_list  and  not groups_list  %}
+{% if  not passenger_list  and  not groups_list  and not groups3_list %}
     <h3>Sorry, there is no booking with similar timings.</h3>
     <p>We will notify you shortly.</p>
 {% else %}
     {% if title == "Notifications" %}
         <p>There are some bookings which might be of your interest. </p>
     {% endif %}
+        {% for obj in groups3_list %}
+        <div class="card">
+          <h5 class="card-header">{{ obj.date}}  &nbsp; &nbsp;&nbsp;
+              {% if obj.time1 < obj.time2 and obj.time1 < obj.time3 %}
+              {{ obj.time1}}-
+              {% endif %}
+              {% if obj.time2 < obj.time1 and obj.time2 < obj.time3 %}
+              {{ obj.time2}}-
+              {% endif %}
+              {% if obj.time3 < obj.time1 and obj.time3 < obj.time2 %}
+              {{ obj.time3}}-
+              {% endif %}
+              {% if obj.time3 > obj.time1 and obj.time3 > obj.time2 %}
+              {{ obj.time3}}
+              {% endif %}
+              {% if obj.time1 > obj.time2 and obj.time1 > obj.time3 %}
+              {{ obj.time1}}
+              {% endif %}
+              {% if obj.time2 > obj.time1 and obj.time2 > obj.time3 %}
+              {{ obj.time2}}
+              {% endif %}
+          </h5>
+          <div class="card-body">
+            <p class="card-text">First Passenger: {{ obj.created_by1}}</p>
+              <p class="card-text">Gender: {{ obj.gender1}}</p>
+              <p class="card-text">Pickup from: {{ obj.pickup_from1}}</p><br>
+              <p class="card-text">Second passenger: {{ obj.created_by2}}</p>
+              <p class="card-text">Gender: {{ obj.gender2}}</p>
+              <p class="card-text">Pickup from: {{ obj.pickup_from2}}</p><br>
+              <p class="card-text">Destination: {{ obj.destination}}</p>
+             <p class="card-text">Group ID: {{ obj.id}}</p>
+              {% if obj.passengers1 != 1 %}
+              <p class="card-text">{{ obj.created_by1}} is bringing more passengers.</p>
+              {% endif %}
+              {% if obj.passengers2 != 1 %}
+              <p class="card-text">{{ obj.created_by2}} is bringing more passengers.</p>
+              {% endif %}
+              <p class="card-text">Total passengers : {{ obj.total_passengers}}</p>
+                <div class="btn-group">
+              <button class="btn btn-primary" onclick="window.location.href = '/chat';" type="button">Chat</button>
+                <button class="btn btn-primary" onclick="window.location.href = '/cabs/Grequest3/{{user.username}}/{{ obj.created_by1}}/{{ obj.created_by2}}/{{ obj.created_by3}}/{{obj.id}}';myFunction()" type="button">Ask to share</button>
+                    <script>
+                        function myFunction() {
+                          alert("Your request has been send.You will be added to the group if any one of them accepts it.We will notify you if it get accepted.");
+                        }
+                    </script>
+            </div>
+          </div>
+        </div>
+        <br>
+        {% endfor %}
         {% for obj in groups_list %}
         <div class="card">
           <h5 class="card-header">{{ obj.date}}  &nbsp; &nbsp;&nbsp;
@@ -40,6 +91,15 @@
               <p class="card-text">{{ obj.created_by2}} is bringing 2 more passengers.</p>
               {% endif %}
               <p class="card-text">Total passengers : {{ obj.total_passengers}}</p>
+              <div class="btn-group">
+              <button class="btn btn-primary" onclick="window.location.href = '/chat';" type="button">Chat</button>
+                <button class="btn btn-primary" onclick="window.location.href = '/cabs/Grequest2/{{user.username}}/{{ obj.created_by1}}/{{ obj.created_by2}}/{{obj.id}}';myFunction()" type="button">Ask to share</button>
+                    <script>
+                        function myFunction() {
+                          alert("Your request has been send.You will be added to the group if any one of them accepts it.We will notify you if it get accepted.");
+                        }
+                    </script>
+            </div>
           </div>
         </div>
         <br>
