@@ -15,12 +15,14 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
     <link rel='shortcut icon' type='image/x-icon' href="https://img.icons8.com/bubbles/2x/car.png">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
 
 </head>
 <body class="text-center">
 <form method="post" class="form-signin">
+    <a href="{% url 'cabs:main' %}">
     <img class="mb-4" src="https://img.icons8.com/bubbles/2x/car.png" alt="" width="72" height="72">
+    </a>
     <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
     {% csrf_token %}
     {{ form.as_p }}

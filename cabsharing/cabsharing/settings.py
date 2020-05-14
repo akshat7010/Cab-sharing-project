@@ -33,7 +33,6 @@ STATICFILES_DIRS=[
 # Application definition
 
 INSTALLED_APPS = [
-    'chat',
     'cabs.apps.CabsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'channels',
+    'django_private_chat',
 ]
 
 MIDDLEWARE = [
@@ -126,12 +125,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # channel
-ASGI_APPLICATION = "cabsharing.routing.application"
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
-    },
-}
+
+
+CHAT_WS_SERVER_HOST = 'localhost'
+CHAT_WS_SERVER_PORT = 5002
+CHAT_WS_SERVER_PROTOCOL = 'ws'

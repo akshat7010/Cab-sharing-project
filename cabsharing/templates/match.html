@@ -1,10 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 {% load static %}
 {% block content %}
 <div class="bg-light py-5">
     <div class="container py-5">
 <h2>{{ title }} :</h2>
 <br>
+        {% if title != "Notifications" %}
+                <h3>Your booking has been posted.You can check it under "My bookings" section.</h3>
+        {% endif %}
 {% if  not passenger_list  and  not groups_list  and not groups3_list %}
     <h3>Sorry, there is no booking with similar timings.</h3>
     <p>We will notify you shortly.</p>
@@ -51,7 +54,7 @@
               {% endif %}
               <p class="card-text">Total passengers : {{ obj.total_passengers}}</p>
                 <div class="btn-group">
-              <button class="btn btn-primary" onclick="window.location.href = '/chat';" type="button">Chat</button>
+              <button class="btn btn-primary" onclick="window.location.href = '/dialogs/{{obj.created_by1}}';" type="button">Chat</button>
                 <button class="btn btn-primary" onclick="window.location.href = '/cabs/Grequest3/{{user.username}}/{{ obj.created_by1}}/{{ obj.created_by2}}/{{ obj.created_by3}}/{{obj.id}}';myFunction()" type="button">Ask to share</button>
                     <script>
                         function myFunction() {
@@ -92,7 +95,7 @@
               {% endif %}
               <p class="card-text">Total passengers : {{ obj.total_passengers}}</p>
               <div class="btn-group">
-              <button class="btn btn-primary" onclick="window.location.href = '/chat';" type="button">Chat</button>
+              <button class="btn btn-primary" onclick="window.location.href = '/dialogs/{{obj.created_by1}}';" type="button">Chat</button>
                 <button class="btn btn-primary" onclick="window.location.href = '/cabs/Grequest2/{{user.username}}/{{ obj.created_by1}}/{{ obj.created_by2}}/{{obj.id}}';myFunction()" type="button">Ask to share</button>
                     <script>
                         function myFunction() {
@@ -114,7 +117,7 @@
             <p class="card-text">Pickup from: {{ obj.pickup_from}}</p>
             <p class="card-text">Destination : {{ obj.destination}}</p>
             <div class="btn-group">
-              <button class="btn btn-primary" onclick="window.location.href = '/chat/{{ obj.created_by}}';" type="button">Chat</button>
+              <button class="btn btn-primary" onclick="window.location.href = '/dialogs/{{obj.created_by}}';" type="button">Chat</button>
                 <button class="btn btn-primary" onclick="window.location.href = '/cabs/brequest/{{user.username}}/{{ obj.created_by}}/{{obj.id}}';myFunction()" type="button">Ask to share</button>
                     <script>
                         function myFunction() {

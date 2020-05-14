@@ -30,6 +30,8 @@ urlpatterns=[
     path('Grequest3/<requester>/<name1>/<name2>/<name3>/<int:id>', views.Grequest3_view, name='Grequest3'),
     path('Fgroup4/<int:bid>/<name1>/<name2>/<name3>/<name4>/<int:rid>', views.Fgroup4_view, name='Fgroup4'),
     path('groups/<int:id>/Gcancel4', views.Gcancel4_view, name='Gcancel4'),
+    path('requestpage/<int:id>/Rcancel2', views.Rcancel2_view, name='Rcancel2'),
+    path('requestpage/<int:id>/Rcancel3', views.Rcancel3_view, name='Rcancel3'),
 ]
 
 urlpatterns+=staticfiles_urlpatterns()

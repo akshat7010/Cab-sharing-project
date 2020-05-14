@@ -1,44 +1,59 @@
-body {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
+.messages-container {
+  height: 300px;
+  border: 1px solid #DDD;
+  position: relative;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 385px;
-  padding: 15px;
-  margin: 0 auto;
-}
-.form-signin .checkbox {
-  font-weight: 400;
-}
-.form-signin .form-control {
-  position: relative;
+.messages {
   box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
+  padding: 20px;
+  overflow: auto;
+  height: 300px;
 }
-.form-signin .form-control:focus {
-  z-index: 2;
+
+.user-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 498px;
+  overflow: auto;
+  background: #EFEFEF;
+  margin: 0;
+  padding: 20px;
+  border-left: 1px solid #DDD;
 }
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+
+.user-list li {
+  display: block;
+  color: orange;
+  font-weight: bold;
 }
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+.username {
+  font-weight: bold;
+  color: orange;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.add-message {
+  margin-top: 20px;
+}
+
+.away span {
+  color: #666;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.msg-read {
+  background-color: lightgray;
+}
+
+.msg-unread {
+  background-color: rgba(170, 204, 153, 0.3);
 }

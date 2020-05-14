@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 {% load static %}
 {% block content %}
 <div class="bg-light">
@@ -33,7 +33,7 @@
         <label class="pull-right">
             <a  class="btn btn-success btn-xs glyphicon glyphicon-ok" href="/cabs/Fgroup2/{{obj.booking_id}}/{{ obj.by}}/{{obj.to}}/{{obj.id}}" title="Accept"></a>
             <a  class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="{{obj.id}}/Rcancel" title="Delete"></a>
-            <a  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Send message"></a>
+            <a  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="/dialogs/{{obj.by}}" title="Send message"></a>
         </label>
         <div class="break"></div>
 
@@ -47,8 +47,8 @@
           Requested to share cab with Group ID : {{ obj.booking_id}}.<br>Please ask other members of the group before accepting the request.
         <label class="pull-right">
             <a  class="btn btn-success btn-xs glyphicon glyphicon-ok" href="/cabs/Fgroup3/{{obj.booking_id}}/{{ obj.by}}/{{obj.to1}}/{{obj.to2}}/{{obj.id}}" title="Accept"></a>
-            <a  class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="{{obj.id}}/Rcancel" title="Delete"></a>
-            <a  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Send message"></a>
+            <a  class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="{{obj.id}}/Rcancel2" title="Delete"></a>
+            <a  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="/dialogs/{{obj.by}}" title="Send message"></a>
         </label>
         <div class="break"></div>
 
@@ -62,8 +62,8 @@
           Requested to share cab with Group ID : {{ obj.booking_id}}.<br>Please ask other members of the group before accepting the request.
         <label class="pull-right">
             <a  class="btn btn-success btn-xs glyphicon glyphicon-ok" href="/cabs/Fgroup4/{{obj.booking_id}}/{{ obj.by}}/{{obj.to1}}/{{obj.to2}}/{{obj.to3}}/{{obj.id}}" title="Accept"></a>
-            <a  class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="{{obj.id}}/Rcancel" title="Delete"></a>
-            <a  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Send message"></a>
+            <a  class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="{{obj.id}}/Rcancel3" title="Delete"></a>
+            <a  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="/dialogs/{{obj.by}}" title="Send message"></a>
         </label>
         <div class="break"></div>
 

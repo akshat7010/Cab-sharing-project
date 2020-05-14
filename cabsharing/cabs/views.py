@@ -445,3 +445,15 @@ def Gcancel4_view(request, id):
     obj2.save()
     obj1.delete()
     return redirect('cabs:groups')
+
+@login_required(login_url="/cabs/login/")
+def Rcancel2_view(request, id):
+    obj = get_object_or_404(Grequest2, id=id)
+    obj.delete()
+    return redirect('cabs:requestpage')
+
+@login_required(login_url="/cabs/login/")
+def Rcancel3_view(request, id):
+    obj = get_object_or_404(Grequest3, id=id)
+    obj.delete()
+    return redirect('cabs:requestpage')
