@@ -1,1 +1,1 @@
-web: gunicorn forgit.wsgi --log-file -
+web: gunicorn cabsharing.wsgi --log-file -
