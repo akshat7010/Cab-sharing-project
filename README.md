@@ -7,4 +7,5 @@ The website is now complete with the following main features:
 4)If the request is accepted then you will be added to the group.
 5)Live cancelling- booking can be cancelled any time.Also,you can leave the group if you want.
 6)Feedback can be submitted.
-
+For anyone who use my repository:
+Use manage.py runserver in one window & manage.py run_chat _server in another window to run my web application
