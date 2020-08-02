@@ -2,7 +2,7 @@
 
 # Cabbie
 
-<strong>Cabbie - Share cabs,save money and make your travel fun.<strong>
+<strong>Cabbie - Share cabs,save money and make your travel fun.<strong><br>
 The aim is to make a website that provides an interface for users to post cab timings and venues. People commuting from one point to another can share empty seats with other passengers who are traveling on the same route. It also has features like inbuilt messaging and emergency booking.   
 
 
@@ -25,4 +25,4 @@ The aim is to make a website that provides an interface for users to post cab ti
    3. Groups formed are dynamic and can consist of up to 4 people. 
    4. Live Notifications and an option to provide feedback are present. 
    5. You can leave a group or remove your post at any time.
-   6. Groups of upto four people can me made to share the cab.
+   6. Groups of upto four people can be formed.
