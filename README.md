@@ -1,5 +1,5 @@
 # Cabbie
-<img src="proj/public/screenshots/cart.png"><br><br>
+<img src="static/1.png"><br><br>
 <strong>Cabbie - Share cabs,save money and make your travel fun.<strong><br>
 <br>
 The aim is to make a website that provides an interface for users to post cab timings and venues. People commuting from one point to another can share empty seats with other passengers who are traveling on the same route. It also has features like inbuilt messaging and emergency booking.   
