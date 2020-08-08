@@ -4,7 +4,7 @@
 <br>
 The aim is to make a website that provides an interface for users to post cab timings and venues. People commuting from one point to another can share empty seats with other passengers who are traveling on the same route. It also has features like inbuilt messaging and emergency booking.   
 
-<img src="proj/public/screenshots/cart.png"><br><br>
+<img src="static/2.png"><br><br>
 # Stack used
        - Django 
        - django-channels
@@ -29,10 +29,12 @@ The aim is to make a website that provides an interface for users to post cab ti
  # Gallery
  
  # chat
- <img src="proj/public/screenshots/cart.png"><br><br>
+<img src="static/5.png"><br><br>
  
+ # Request
+ <img src="static/3.png"><br><br>
 # Groups
-<img src="proj/public/screenshots/cart.png"><br><br>
+<img src="static/4.png"><br><br>
 
 # Login
-<img src="proj/public/screenshots/cart.png"><br><br>
+<img src="static/6.png"><br><br>
