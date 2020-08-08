@@ -1,11 +1,10 @@
-# Cab-sharing-project
-
 # Cabbie
-
+<img src="proj/public/screenshots/cart.png"><br><br>
 <strong>Cabbie - Share cabs,save money and make your travel fun.<strong><br>
+<br>
 The aim is to make a website that provides an interface for users to post cab timings and venues. People commuting from one point to another can share empty seats with other passengers who are traveling on the same route. It also has features like inbuilt messaging and emergency booking.   
 
-
+<img src="proj/public/screenshots/cart.png"><br><br>
 # Stack used
        - Django 
        - django-channels
@@ -26,3 +25,14 @@ The aim is to make a website that provides an interface for users to post cab ti
    4. Live Notifications and an option to provide feedback are present. 
    5. You can leave a group or remove your post at any time.
    6. Groups of upto four people can be formed.
+
+ # Gallery
+ 
+ # chat
+ <img src="proj/public/screenshots/cart.png"><br><br>
+ 
+# Groups
+<img src="proj/public/screenshots/cart.png"><br><br>
+
+# Login
+<img src="proj/public/screenshots/cart.png"><br><br>
